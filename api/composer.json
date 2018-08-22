@@ -1,0 +1,21 @@
+{
+    "name": "komeiji-satori/SatoriFramework",
+    "description": "A Simple PHP API Framework",
+    "keywords": ["php", "api", "framework"],
+    "homepage": "https://satori.moe ",
+    "time": "2017-07-13",
+    "license": "GNU General Public License v3.0",
+    "require-dev": {
+        "bephp/activerecord": "^2.1",
+    },
+    "authors": [{
+        "name": "Satori Komeiji",
+        "email": "komeiji@satori.moe",
+        "homepage": "https://satori.moe",
+        "role": "Engineer"
+    }, {
+        "name": "YonezawaYukar",
+        "email": "h@loli.market",
+        "role": "Engineer"
+    }]
+}

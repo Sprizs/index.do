@@ -1,0 +1,4 @@
+#domain伪静态
+    location ~ /(?<domainname>.*\.((?!ttf|html|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|ppt|tar|php|wav|bmp|js|css).)*)\/?$ {
+    rewrite . /domain.php?name=$domainname last;
+}

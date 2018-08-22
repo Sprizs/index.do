@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Welcome to A.io!">
+    <base href="http://www.d.a.io">
+    <link rel="icon" href="/market/img/favicon.ico">
+    <!-- Link For Title Favicon Image -->
+    <title>Welcome to A.io! | www.d.a.io</title>
+    <!-- jQuery -->
+    <script src="/market/js/jquery.js"></script>
+    <!-- Bootstrap -->
+    <script src="/market/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- No UI slider -->
+    <link href="/market/css/nouislider.min.css" rel="stylesheet">
+    <script src="/market/js/nouislider.min.js"></script>
+    <!-- wNumb number formatting -->
+    <script src="/market/js/wNumb.js"></script>
+    <!-- Custom + Common Css -->
+    <link rel="stylesheet" type="text/css" href="/market/css/page_specific/efty_market_themes/eustatius/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,100,300' rel='stylesheet' type='text/css'>
+    <!--[if lt IE 9]>
+              <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+              <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
+</head>
+<!-- EFTY MARKET THEME EUSTATIUS -->
+
+<body>
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+    <!-- Custom JS -->
+    <script src="/market/js/page_specific/efty_market_themes/eustatius/custom.js"></script>
+    <style>
+    /* Overrule CSS with custom colors from Efty user */
+
+    .main-text .btn {
+        background: #ff0000;
+        color: #ffffff;
+    }
+
+    .domain_box .btn {
+        background: #ff0000;
+        color: #ffffff;
+    }
+
+    .premium_title span {
+        color: #ff0000;
+    }
+
+    footer {
+        border-top-color: #ff0000;
+    }
+
+    .nav>li.active>a,
+    .nav>li>a:hover,
+    .nav>li>a:focus {
+        border-bottom-color: #ff0000;
+        color: #ff0000;
+    }
+
+    section.products span.price {
+        background: #ff0000 !important;
+        color: #ffffff !important;
+    }
+
+    body {
+        background: url('market/uploads/background/eba75870272a9ff84d6e61df9a65f875.png') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    section.products .btn-primary {
+        background: #ff0000;
+        color: #ffffff;
+    }
+
+    section.categories ul li a:hover {
+        border-bottom-color: #ff0000;
+        ;
+        color: #ff0000;
+        ;
+    }
+
+    section.top-search .btn-success {
+        background: #ff0000;
+        color: #ffffff;
+    }
+    </style>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-7 col-xs-5">
+                    <a href="http://www.d.a.io"><img src="market/uploads/logo/eba75870272a9ff84d6e61df9a65f875.gif" class="img-responsive"></a>
+                </div>
+                <div class="col-md-4 col-sm-5 col-xs-7">
+                    <h2>
+                            <i class="fa fa-phone" aria-hidden="true"></i> +1.980.522.8877 </h3>
+                        </h2>
+                    <p class="hidden-xs">
+                        Call us and we'll help you secure the perfect domain name for your business.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section -->
+    <section class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1>Welcome to A.io!</h1>
+                    <h3>Welcome to the A.io Domain Marketplace! <BR>Browse around and let us know if you have any questions!</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Top Search Section -->
+    <section class="top-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <!--<h1>Welcome to A.io!</h1>-->
+                    <!--<h3>Welcome to the A.io Domain Marketplace! <BR>Browse around and let us know if you have any questions!</h3>-->
+                    <form action="/search/" method="get">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Domain name or keyword" name="keyword">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-success btn-large" type="submit"><i class="glyphicon glyphicon-search"></i> Search</button>
+                                </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Top Search Section -->
+    <!-- Premium domains -->
+    <section class="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="container">
+                        <div class="row" id="contents">
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                $.getJSON('http://127.0.0.1:2333/index.do/admin/type.json', function(result) {
+                    data_array = [];
+                    result.forEach((value, index) => {
+                        $('#types').append('<li><a href="http://www.d.a.io/search/category/' + value + '">' + value + '</a></li>');
+                    });
+                });
+                $.ajax({
+                    url: "http://127.0.0.1:2333/index.do/api/index.php/domain/list",
+                    async: true,
+                    success: function(data) {
+                        data.forEach((value, index) => {
+                            if (value['image'] !== '') {
+                                $('#contents').append('<div class="col-lg-4 col-sm-6 col-xs-12 productbox"><div class="productspacer text-center"><a href="/' + value['domain'] + '"title="' + value['domain'] + '"class="prodhref"><div class="hoverbox text-center"></div><div class="hoverbtn text-center"><i class="fa fa-search"aria-hidden="true"></i><br><br><a class="btn btn-primary btn-large"href="/' + value['domain'] + '"role="button">Buy now</a></div><div class="logobox"><a href="/' + value['domain'] + '"><span class="price">Buy now</span></a><div class="logocontainer"><a href="/' + value['domain'] + '"title="' + value['domain'] + '"></a><img src="' + value['image'] + '" class="img-responsive center-block"></div><h3>' + value['domain'] + '</h3></div></a></div></div>');
+                            } else {
+                                $('#contents').append('<div class="col-lg-4 col-sm-6 col-xs-12 productbox"><div class="productspacer text-center"><a href="/' + value['domain'] + '"title="' + value['domain'] + '"class="prodhref"><div class="hoverbox text-center"></div><div class="hoverbtn text-center"><i class="fa fa-search"aria-hidden="true"></i><br><br><a class="btn btn-primary btn-large"href="/' + value['domain'] + '"role="button">Buy now</a></div><div class="logobox"><a href="/' + value['domain'] + '"><span class="price">Buy now</span></a><div class="logocontainer"><a href="/' + value['domain'] + '"title="' + value['domain'] + '"></a><div class="dom_placeholder"><p>' + value['domain'] + '</p></div></div><h3>' + value['domain'] + '</h3></div></a></div></div>');
+                            }
+
+                        })
+                        $(document).ready(function() {
+                            // Hover products from productlist
+                            $(".productbox").mouseenter(function(event) {
+                                event.preventDefault();
+                                $("div.hoverbox").hide();
+                                $(this).find("div.hoverbox:first").show();
+                                $(this).find("div.hoverbtn:first").show();
+                            });
+                            $(".productbox").mouseleave(function(event) {
+                                event.preventDefault();
+                                $("div.hoverbox").hide();
+                                $("div.hoverbtn").hide();
+                            });
+                            $("section.products").mouseleave(function(event) {
+                                event.preventDefault();
+                                $("div.hoverbox").hide();
+                                $("div.hoverbtn").hide();
+                            });
+
+                        });
+                    }
+                });
+                $.getJSON('http://127.0.0.1:2333/index.do/admin/settings.json' + "?rand=" + Math.random(), function(data) {
+                    document.title = data['site-title'];
+                    $('#location_href').html(data['site-name']);
+                    $('#contact-email').html(data['contact-email']);
+                    $('#contact_email_href')[0].href = "mailto:" + data['contact-email'];
+                });
+                </script>
+            </div>
+        </div>
+    </section>
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <ul id="types">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories -->
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <ul class="list-unstyled contact_list">
+                        <li><a id="contact_email_href" class="text-blue"><i class="fa fa-envelope" aria-hidden="true"></i> <span id="contact-email"></span></a></li>
+                    </ul>
+                    <ul class="list-unstyled contact_list social_list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </footer>
+    <!-- Footer -->
+    <!-- Custom JS -->
+    <script src="/market/js/page_specific/efty_market_themes/eustatius/custom.js"></script>
+</body>
+
+</html>
